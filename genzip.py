@@ -8,8 +8,10 @@ def generate_zip(input_csv_path, certifactes_path, output_dir_path):
         for row in csvreader:
             print(row[0])
             fname = certifactes_path + "/GP-"+row[0]+".pdf"
+            outname = output_dir_path+ "/GP-"+row[0]+".pdf"
             print(fname)
-            shutil.copy(fname, output_dir_path)
+            print(outname)
+            #shutil.copy(fname, output_dir_path)
             print("copied")
 
 if __name__== "__main__":
