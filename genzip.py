@@ -18,9 +18,10 @@ def generate_zip(input_csv_path, certifactes_path, output_dir_path):
                 shutil.copyfile(fname, outname)
             except:
                 print(f"GP Not found: {outname}", file=text_file)
+                text_file.flush()
             print("copied")
         text_file.flush()
-        text_file.close
+        text_file.close()
 
 if __name__== "__main__":
     generate_zip("UPR.csv", source_dir, destination_dir)
