@@ -11,16 +11,17 @@ def generate_zip(input_csv_path, certifactes_path, output_dir_path):
         dict = {}
         for row in csvreader:
             print(row[0])
+            fname = certifactes_path + "/GP-"+row[0]+".pdf"
+            outname = output_dir_path+ "/GP-"+row[0]+".pdf"
+            print(fname)
+            print(outname)
             flag = dict.get(row[0], None)
             if not flag:
                 print(f"GP Not found: {outname}", file=text_file)
                 text_file.flush()
             else:
                 dict[row[0]] = "Present"
-            fname = certifactes_path + "/GP-"+row[0]+".pdf"
-            outname = output_dir_path+ "/GP-"+row[0]+".pdf"
-            print(fname)
-            print(outname)
+
             try:
                 shutil.copyfile(fname, outname)
             except:
