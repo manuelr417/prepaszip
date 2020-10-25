@@ -18,8 +18,6 @@ def generate_zip(input_csv_path, certifactes_path, output_dir_path):
             flag = dict.get(row[0], None)
             if not flag:
                 dict[row[0]] = "Present"
-                print(f"GP Not found: {outname}", file=text_file)
-                text_file.flush()
             else:
                 print(f"GP duplicate found: {row[0]}", file=text_file)
                 text_file.flush()
