@@ -7,17 +7,13 @@ def generate_zip(input_csv_path, certifactes_path, output_dir_path):
         csvreader =csv.reader(csvfile)
         i = 0
         for row in csvreader:
-            if i == 0:
-                pass
-            else:
-                print(row[0])
-                fname = certifactes_path + "/GP-"+row[0]+".pdf"
-                outname = output_dir_path+ "/GP-"+row[0]+".pdf"
-                print(fname)
-                print(outname)
-                shutil.copyfile(fname, outname)
-                print("copied")
-            i = i + 1
+            print(row[0])
+            fname = certifactes_path + "/GP-"+row[0]+".pdf"
+            outname = output_dir_path+ "/GP-"+row[0]+".pdf"
+            print(fname)
+            print(outname)
+            shutil.copyfile(fname, outname)
+            print("copied")
 
 if __name__== "__main__":
     generate_zip("UAGM.csv", source_dir, destination_dir)
